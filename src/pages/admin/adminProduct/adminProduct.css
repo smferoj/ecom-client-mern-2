@@ -1,0 +1,10 @@
+.product_form-head{
+    font-family: var(--body-font);
+    text-align: center;
+    padding: 0.5rem 0;
+    background-color: var(--border-color);
+    color: var(--bg-color);
+    font-weight: 600;
+}
+
+ 

@@ -1,0 +1,18 @@
+.side_menu-bar{
+    background-color: var(--bg-color)!important;
+}
+
+.filter_categories, .filter_prices{
+    background: var(--primary-color);
+}
+ .ant-checkbox-wrapper{
+    color: var(--primary-color);
+    font-size: var(--normal-font);
+    font-family: var(--body-font)!important ;
+ }
+
+ .ant-radio-wrapper{
+    color: var(--primary-color);
+    font-family: var(--body-font)!important;
+    font-size: 1rem;
+ }

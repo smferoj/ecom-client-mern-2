@@ -1,0 +1,6 @@
+.arrival, .seller{
+    padding: 1rem 0;
+    font-family: var(--second-font);
+    background-color: var(--primary-color);
+}
+

@@ -1,0 +1,19 @@
+/* jumbotron animation color css */
+.jumbotron {
+   padding-top: 1rem;
+    width: 100%;
+    height: 20vh;
+    color: var(--text-color);
+  }
+
+  .jumbotron h1{
+    font-family: var(--body-font);
+  }
+  .jumbotron p{
+    font-family: var(--second-font);
+    margin-top: -1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+
+  }
+  
