@@ -7,6 +7,7 @@ import { useCart } from "../../context/cart";
 import Search from "../forms/search/Search";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaFacebookMessenger } from "react-icons/fa";
+import logo from "../../images/logo.png";
 
 const Menu = () => {
   // context
@@ -24,19 +25,23 @@ const Menu = () => {
 
   return (
     <>
-      <ul className="nav d-flex justify-content-between shadow-lg mb-1 sticky-top bg-white pt-1 pb-1 px-4">
+      <ul className="nav d-flex  shadow-lg mb-1 sticky-top bg-white pt-1 pb-1 px-4">
         <li className="nav-item">
           <NavLink className="nav-link text-dark" aria-current="page" to="/">
-            <div className="d-flex gap-2 g-0 p-0 align-items-center">
-              <h3 className="text-danger font-weight-bolder">Pitha-Puly</h3>
-              <p className="pt-3 text-success"> Collections of Homemade Dishes</p>
+            <div className="max-height-100 d-flex align-items-center justify-content-center">
+              <img
+                src={logo}
+                alt="Logo"
+                className="mx-auto"
+                style={{ maxHeight: "25%", maxWidth: "25%" }}
+              />
             </div>
           </NavLink>
         </li>
         <div className="d-flex gap-4 align-items-center">
           <p className="">
             <a href="https://whatsapp.com" className="text-dark">
-              <BsWhatsapp  /> whatsapp
+              <BsWhatsapp /> whatsapp
             </a>
           </p>
           <p>
@@ -47,7 +52,11 @@ const Menu = () => {
         </div>
 
         <li className="nav-item">
-          <NavLink className="nav-link text-dark" aria-current="page" to="/shop">
+          <NavLink
+            className="nav-link text-dark"
+            aria-current="page"
+            to="/shop"
+          >
             SHOP
           </NavLink>
         </li>
@@ -58,16 +67,18 @@ const Menu = () => {
             offset={[-5, 11]}
             showZero={true}
           >
-            <NavLink className="nav-link text-dark" aria-current="page" to="/cart">
+            <NavLink
+              className="nav-link text-dark"
+              aria-current="page"
+              to="/cart"
+            >
               CART
             </NavLink>
           </Badge>
         </li>
       </ul>
-     
-     
+
       <ul className="nav d-flex justify-content-between shadow-lg mb-2 sticky-top bg-white pt-2 pb-2 px-2">
-        
         {/* =========Categories in nav menu======== */}
         <div className="dropdown">
           <li>
@@ -100,7 +111,7 @@ const Menu = () => {
         {!auth?.user ? (
           <div className="d-flex justify-content-end">
             <li className="nav-item">
-              <NavLink className="nav-link text-dark" to="/login" >
+              <NavLink className="nav-link text-dark" to="/login">
                 LOGIN
               </NavLink>
             </li>
@@ -141,7 +152,6 @@ const Menu = () => {
             </li>
           </div>
         )}
-
       </ul>
     </>
   );
