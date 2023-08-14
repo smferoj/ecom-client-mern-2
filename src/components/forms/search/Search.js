@@ -20,23 +20,26 @@ const Search=()=> {
   };
 
   return (
-    <form className="d-flex" onSubmit={handleSubmit}>
+    <form className="d-flex flex-grow-1" onSubmit={handleSubmit}>
+    <div className="flex-grow-1">
       <input
         type="search"
-        style={{ borderRadius:"0px" }}
-        className="form-control px-5"
+        style={{ borderRadius: "0px", width: "100%" }}
+        className="form-control pt-2"
         placeholder="Search"
         onChange={(e) => setValues({ ...values, keyword: e.target.value })}
         value={values.keyword}
       />
-      <button
-        className="btn btn-outline-info px-3 "
-        type="submit"
-        style={{ borderRadius: "0px" }}
-      >
-        Search 
-      </button>
-    </form>
+    </div>
+    <button
+      className="btn btn-outline-info px-3"
+      type="submit"
+      style={{ borderRadius:"0", height:"37px"}}
+    >
+        Search
+    </button>
+  </form>
+  
   );
 }
 

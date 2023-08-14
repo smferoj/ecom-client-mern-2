@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import'./home.css'
-import Jumbotron from "../../components/cards/Jumbotron";
 import axios from "axios";
 import ProductCard from "../../components/cards/productCard/ProductCard";
+import Carousel from "../../components/carousel/Carousel";
 
 const Home=()=> {
   const [products, setProducts] = useState([]);
@@ -55,10 +55,16 @@ const Home=()=> {
 
   return (
     <div>
-      <Jumbotron
-        title= "Pitha-Puly"
-        subTitle="See Our Collections and Choose it!!"
-      />
+        <div className="head_line">
+          <h1> Gen-Style</h1>
+          <h3> Diversity of collections</h3>
+        </div>
+      
+      <div className="carousel_container">
+       <Carousel/>
+      </div>
+     
+
       <div className="row m-2">
         <div className="col-md-6 px-2">
           <h2 className="p-3 mt-2 mb-2 h4 text-center arrival">
