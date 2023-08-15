@@ -1,31 +1,81 @@
 
+.home_container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .head_line{
-    text-align: center;
-    padding: 3rem 0 2rem 0;
-    background-color: rgb(240, 237, 237);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
 }
+
 .head_line h1{
- font-size: 42px;
- font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-size: 56px;
+ text-align: center;
+ color: var(--primary-color);
+ font-weight:600;
+ line-height: 35px;
+}
+
+.head_line h3{
+ font-size: 28px;
+ font-family: var(--second-font);
  font-weight: 600;
+ text-align: center;
 
 }
-.head_line h3{
- font-size: 22px;
- font-family: cursive;
- font-weight: 600;
- margin-top: -20px;
 
+.left_image, .right_image{
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+   
 }
 
 .carousel_container{
     width: 100%;
-    height: 350px;
+    max-height: 400px;
+    background-color: teal;
+    overflow: hidden;
 }
 
-.arrival, .seller{
-    padding: 1rem 0;
-    font-family: var(--second-font);
-    background-color: var(--primary-color);
+.card_related{
+    width: 100%;
+    display: flex;
+    gap:1rem;
+    justify-content:center;
+    align-items:center;
 }
 
+
+@media screen and (max-width: 768px) {
+    .head_line{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .right_image{
+       display: none;
+    }
+    .head_line h1{
+        font-size: 36px;
+        line-height: 28px;
+       }
+       
+       .head_line h3{
+        font-size: 20px;
+       }
+       
+  }
+@media screen and (max-width: 591px) {
+    .card_related{
+        flex-direction: column;
+
+    }
+    
+  }

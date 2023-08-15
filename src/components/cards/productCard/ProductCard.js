@@ -11,7 +11,7 @@ const  ProductCard=({ p })=> {
   const navigate = useNavigate();
 
   return (
-    <div className="card mb-2 hoverable">
+    <div className="card hoverable p-2">
       <Badge.Ribbon text={`${p?.sold} sold`} color="red" className="mx-2">
         <Badge.Ribbon
           text={`${p?.quantity >= 1
@@ -26,7 +26,7 @@ const  ProductCard=({ p })=> {
             className="card-img-top"
             src={`${process.env.REACT_APP_API}/product/photo/${p._id}`}
             alt={p.name}
-            style={{ height:"200px", objectFit: "cover" }}
+            style={{ height:"160px", objectFit: "cover" }}
           />
         </Badge.Ribbon>
       </Badge.Ribbon>

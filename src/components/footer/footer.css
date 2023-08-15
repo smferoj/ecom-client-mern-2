@@ -1,0 +1,16 @@
+.list-unstyled a{
+    color: var(--primary-color)
+}
+.list-unstyled a:hover{
+    color: white
+}
+
+
+.address a{
+    color: var(--primary-color)
+}
+
+.address a:hover{
+    color: white
+}
+

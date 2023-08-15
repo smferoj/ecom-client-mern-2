@@ -5,8 +5,7 @@ import useCategory from "../../hooks/useCategory";
 import { Badge } from "antd";
 import { useCart } from "../../context/cart";
 import Search from "../forms/search/Search";
-import { BsWhatsapp } from "react-icons/bs";
-import { FaFacebookMessenger } from "react-icons/fa";
+
 import logo from "../../images/logo.png";
 import './menu.css'
 
@@ -42,7 +41,7 @@ const Menu = () => {
                       </NavLink>
                     </li>
                     <li className="nav-item">
-                      <Badge count={cart?.length >= 1 ? cart.length : 0} offset={[-5, 11]} showZero={true}>
+                      <Badge count={cart?.length >= 1 ? cart.length:0} offset={[-5, 11]} showZero={true} >
                         <NavLink className="nav-link mt-1" to="/cart">
                           CART
                         </NavLink>
@@ -100,18 +99,7 @@ const Menu = () => {
 
 export default Menu;
 
-  /* <div className="d-flex gap-4 align-items-center">
-          <p className="">
-            <a href="https://whatsapp.com" className="text-dark">
-              <BsWhatsapp /> whatsapp
-            </a>
-          </p>
-          <p>
-            <a href="https://messenger.com" className="text-dark">
-              <FaFacebookMessenger /> Messagner
-            </a>
-          </p>
-        </div> 
+  /* 
         
        
         /* <div className="dropdown">
