@@ -21,6 +21,8 @@ import Search from './pages/search/Search';
 import ProductView from './pages/productView/ProductView';
 import Cart from './pages/cart/Cart';
 import AdminOrders from './pages/admin/orders/Orders';
+import Footer from './components/footer/Footer';
+
 
 const App = () => {
 
@@ -58,7 +60,7 @@ const App = () => {
       <Route path='*' element={<NotFound/>}/>
     </Routes>
     
-  
+   <Footer/>
     
     </BrowserRouter>
  

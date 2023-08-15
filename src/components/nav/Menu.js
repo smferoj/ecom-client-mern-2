@@ -5,71 +5,104 @@ import useCategory from "../../hooks/useCategory";
 import { Badge } from "antd";
 import { useCart } from "../../context/cart";
 import Search from "../forms/search/Search";
-import { BsWhatsapp } from "react-icons/bs";
-import { FaFacebookMessenger } from "react-icons/fa";
+
+import logo from "../../images/logo.png";
+import './menu.css'
 
 const Menu = () => {
-  // context
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
-  // hooks
   const categories = useCategory();
   const navigate = useNavigate();
-  // console.log("categories in menu => ", categories);
+
   const logout = () => {
-    setAuth({ ...auth, user: null, token: "" });
-    localStorage.removeItem("auth");
-    navigate("/login");
+    setAuth({ ...auth, user: null, token: '' });
+    localStorage.removeItem('auth');
+    navigate('/login');
   };
 
-  return (
-    <>
-      <ul className="nav d-flex justify-content-between shadow-lg mb-1 sticky-top bg-white pt-1 pb-1 px-4">
-        <li className="nav-item">
-          <NavLink className="nav-link text-dark" aria-current="page" to="/">
-            <div className="d-flex gap-2 g-0 p-0 align-items-center">
-              <h3 className="text-danger font-weight-bolder">Pitha-Puly</h3>
-              <p className="pt-3 text-success"> Collections of Homemade Dishes</p>
+      return (
+   
+          <div className="nav_container">
+              <div className="left_col">
+                <div className="d-flex align-items-center">
+                  <NavLink className="navbar-brand" to="/">
+                    <img src={logo} alt="Logo" style={{ maxHeight: '50px' }} />
+                  </NavLink>
+                  <ul className="nav">
+                    <li className="nav-item">
+                      <NavLink className="nav-link" aria-current="page" to="/">
+                        HOME
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" aria-current="page" to="/shop">
+                        SHOP
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <Badge count={cart?.length >= 1 ? cart.length:0} offset={[-5, 11]} showZero={true} >
+                        <NavLink className="nav-link mt-1" to="/cart">
+                          CART
+                        </NavLink>
+                      </Badge>
+                    </li>
+                    {!auth?.user ? (
+                      <>
+                        <li className="nav-item">
+                          <NavLink className="nav-link" to="/login">
+                            LOGIN
+                          </NavLink>
+                        </li>
+                        <li className="nav-item">
+                          <NavLink className="nav-link" to="/register">
+                            REGISTER
+                          </NavLink>
+                        </li>
+                      </>
+                    ) : (
+                      <li className="nav-item dropdown">
+                        <a
+                          className="nav-link dropdown-toggle"
+                          href="#"
+                          id="navbarDropdown"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          {auth?.user?.name?.toUpperCase()}
+                        </a>
+                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li>
+                            <NavLink className="dropdown-item" to={`/dashboard/${auth?.user?.role === 1 ? 'admin' : 'user'}`}>
+                              Dashboard
+                            </NavLink>
+                          </li>
+                          <li>
+                            <a className="dropdown-item" href="#" onClick={logout}>
+                              Logout
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              </div>
+              <div className="right_col">
+                <Search />
+              </div>
             </div>
-          </NavLink>
-        </li>
-        <div className="d-flex gap-4 align-items-center">
-          <p className="">
-            <a href="https://whatsapp.com" className="text-dark">
-              <BsWhatsapp  /> whatsapp
-            </a>
-          </p>
-          <p>
-            <a href="https://messenger.com" className="text-dark">
-              <FaFacebookMessenger /> Messagner
-            </a>
-          </p>
-        </div>
+      
+  );
+};
 
-        <li className="nav-item">
-          <NavLink className="nav-link text-dark" aria-current="page" to="/shop">
-            SHOP
-          </NavLink>
-        </li>
-        {/* =========Cart================ */}
-        <li className="nav-item mt-1">
-          <Badge
-            count={cart?.length >= 1 ? cart.length : 0}
-            offset={[-5, 11]}
-            showZero={true}
-          >
-            <NavLink className="nav-link text-dark" aria-current="page" to="/cart">
-              CART
-            </NavLink>
-          </Badge>
-        </li>
-      </ul>
-     
-     
-      <ul className="nav d-flex justify-content-between shadow-lg mb-2 sticky-top bg-white pt-2 pb-2 px-2">
+export default Menu;
+
+  /* 
         
-        {/* =========Categories in nav menu======== */}
-        <div className="dropdown">
+       
+        /* <div className="dropdown">
           <li>
             <a
               className="nav-link text-dark pointer dropdown-toggle"
@@ -95,56 +128,6 @@ const Menu = () => {
               ))}
             </ul>
           </li>
-        </div>
-        <Search />
-        {!auth?.user ? (
-          <div className="d-flex justify-content-end">
-            <li className="nav-item">
-              <NavLink className="nav-link text-dark" to="/login" >
-                LOGIN
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link text-dark" to="/register">
-                REGISTER
-              </NavLink>
-            </li>
-          </div>
-        ) : (
-          <div className="dropdown">
-            <li>
-              <a
-                className="nav-link text-dark pointer dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                {auth?.user?.name?.toUpperCase()}
-              </a>
-
-              <ul className="dropdown-menu">
-                <li>
-                  <NavLink
-                    className="nav-link text-dark"
-                    to={`/dashboard/${
-                      auth?.user?.role === 1 ? "admin" : "user"
-                    }`}
-                  >
-                    Dashboard
-                  </NavLink>
-                </li>
-
-                <li className="nav-item pointer">
-                  <a onClick={logout} className="nav-link text-info">
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </div>
-        )}
-
-      </ul>
-    </>
-  );
-};
-
-export default Menu;
+        </div> */
+        
+        
