@@ -1,5 +1,7 @@
 import React from "react";
-import carousel_1 from "../../images/style-1.png";
+import carousel_1 from "../../images/Slide-1.png";
+import carousel_2 from "../../images/Slide-2.png";
+import carousel_3 from "../../images/Slide-1.png";
 import "./carousel.css";
 
 const Carousel = () => {
@@ -58,7 +60,7 @@ const Carousel = () => {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(0, 50, 0, 0.2)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
               }}
             ></div>
           </div>
@@ -78,7 +80,7 @@ const Carousel = () => {
             }}
           >
             <img
-              src={carousel_1}
+              src={carousel_2}
               style={{
                 display: "block",
                 width: "100%",
@@ -93,7 +95,7 @@ const Carousel = () => {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(0, 50, 0, 0.2)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
               }}
             ></div>
           </div>
@@ -113,7 +115,7 @@ const Carousel = () => {
             }}
           >
             <img
-              src={carousel_1}
+              src={carousel_3}
               style={{
                 display: "block",
                 width: "100%",
@@ -128,7 +130,7 @@ const Carousel = () => {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(0, 50, 0, 0.2)",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
               }}
             ></div>
           </div>

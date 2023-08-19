@@ -1,8 +1,31 @@
 
 .card{
-    min-width: 250px;
+ min-width: 250px;
 }
 
+.sold_ribon, .stock_ribon {
+    background-color: var(--title-color)
+
+}
+.card_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card_image img {
+    max-width: 50%;
+    height: auto;
+}
+
+.card_image img{
+    width: 100%;
+
+}
+.price{
+    background-color: tranparent!important;
+}
 .card-button{
     margin-left: 0.1rem;
     margin-right: 0.1rem;

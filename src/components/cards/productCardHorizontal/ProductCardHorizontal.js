@@ -56,10 +56,11 @@ const ProductCardHorizontal=({ p, remove = true })=> {
           </p>
           {remove && (
             <p
-              className=" text-danger mb-2 pointer"
+              className=" text-danger mb-2"
               onClick={() => removeFromCart(p._id)}
             >
-              Remove
+
+              <span class="cursor-pointer">Remove </span>
             </p>
           )}
         </div>

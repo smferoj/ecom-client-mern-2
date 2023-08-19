@@ -65,12 +65,15 @@ const ProductView=()=> {
                 placement="start"
                 color="green"
               >
+                <div className="card_image">
                 <img
                   className="card-img-top"
                   src={`${process.env.REACT_APP_API}/product/photo/${product._id}`}
                   alt={product.name}
-                  style={{ height: "350px", width: "100%", objectFit: "cover" }}
+                  style={{ height: "100%", width: "100%", objectFit:"cover" }}
                 />
+                </div>
+              
               </Badge.Ribbon>
             </Badge.Ribbon>
 
