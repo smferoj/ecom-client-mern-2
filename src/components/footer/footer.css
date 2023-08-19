@@ -1,8 +1,12 @@
+
+.footer{
+    background-color: rgb(0, 7, 48);
+}
 .list-unstyled a{
     color: var(--primary-color)
 }
 .list-unstyled a:hover{
-    color: white
+    color: rgb(162, 164, 189)
 }
 
 

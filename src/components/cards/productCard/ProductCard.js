@@ -11,35 +11,34 @@ const  ProductCard=({ p })=> {
   const navigate = useNavigate();
 
   return (
-    <div className="card hoverable p-2">
-      <Badge.Ribbon text={`${p?.sold} sold`} color="red" className="mx-2">
+    <div className="card hoverable p-3">
+      <Badge.Ribbon text={`${p?.sold} sold`}className="mx-2 sold_ribon">
         <Badge.Ribbon
           text={`${p?.quantity >= 1
               ? `${p?.quantity - p?.sold} in stock`
               : "Out of stock"
             }`}
           placement="start"
-          color="green"
-          className="mx-2"
-        >
+          className="mx-2 stock_ribon">
+          
+          <div className="card_image">
           <img
             className="card-img-top"
             src={`${process.env.REACT_APP_API}/product/photo/${p._id}`}
             alt={p.name}
-            style={{ height:"160px", objectFit: "cover" }}
           />
+          </div>
         </Badge.Ribbon>
       </Badge.Ribbon>
 
       <div className="card-body">
-        <h5>{p?.name}</h5>
-        <h4 className="fw-bold">
+        <h5 className="pt-2">{p?.name}</h5>
+        <h6 className="bg-white text-danger">
           {p?.price?.toLocaleString("en-US", {
             style: "currency",
             currency:"BDT",
           })}
-        </h4>
-
+        </h6>
         <p className="card-text">{p?.description?.substring(0, 60)}...</p>
       </div>
 
@@ -65,8 +64,6 @@ const  ProductCard=({ p })=> {
         </button>
       </div>
 
-      {/* <p>{moment(p.createdAt).fromNow()}</p>
-      <p>{p.sold} sold</p> */}
     </div>
   );
 }

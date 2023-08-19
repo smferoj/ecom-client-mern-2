@@ -3,8 +3,8 @@ import "./home.css";
 import axios from "axios";
 import ProductCard from "../../components/cards/productCard/ProductCard";
 import Carousel from "../../components/carousel/Carousel";
-import Head_img_1 from "../../images/Polo neck T- Shart.jpg";
-import Head_img_2 from "../../images/Polo neck T- Shart.jpg";
+import Head_img_1 from "../../images/Banner_1.png";
+import Head_img_2 from "../../images/Banner_2.png";
 
 
 const Home = () => {
@@ -63,8 +63,9 @@ const Home = () => {
           <img src={Head_img_1} alt="" />
         </div>
         <div className="head_desc">
-        <h1> Gen-Style</h1>
+        <h1> Gen <span>Style</span></h1>
         <h3> Diversity of collections</h3>
+        
         </div>
         <div className="right_image">
           <img src={Head_img_2} alt="" />
@@ -74,9 +75,10 @@ const Home = () => {
       <div className="carousel_container">
         <Carousel />
       </div>
+      {/* ==========Card related========= */}
        <div className="card_related">  
-       <div className="px-2">
-          <h2 className="text-center pt-4 pb-4">New Arrivals</h2>
+       <div className="px-2 arrival">
+          <h4 className="text-center pt-2 pb-2 ">New Arrivals</h4>
           <div className="row">
             {products?.map((p) => (
               <div className="col-lg-6" key={p._id}>
@@ -86,10 +88,10 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="px-2 ">
-          <h2 className="text-center pt-4 pb-4">
+        <div className="px-2 selling">
+          <h4 className="text-center pt-2 pb-2">
             Top Selling
-          </h2>
+          </h4>
           <div className="row">
             {sortedBySold?.map((p) => (
               <div className="col-lg-6" key={p._id}>

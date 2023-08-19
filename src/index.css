@@ -4,27 +4,18 @@
 
 :root{
     /* colors */
-    --primary-color: hsl(165,60%,40%);
-    --title-color: hsl(295, 87%, 33%);
-    --text-color: hsl(165,60%,40%);
-    --bg-color: bisque;
-    --border-color:  hsl(295, 87%, 33%);
+    --primary-color:#14757e ;
+    --title-color: #d63729 ;
+    --text-color: hsl(240, 7%, 3%);
+    --bg-color: rgb(250, 235, 217);
+
         /* typography */
        --body-font: 'Fira Sans Condensed', sans-serif;;
        --second-font:'Alkatra', cursive;
        --h1-font-size: 44px;
        --h2-font-size: 30px;
-       --h3-font-size: 28px;
-       --h4-font-size: 24px;
        --h5-font-size: 22px;
        --normal-font-size: 16px;
-       --small-font-size: 15px;
-       --smaller-font-size: 14px;
-       --tiny-font-size: 13px;
-       /* shadow */
-       --shadow: 5px 5px rgb(255 255 255/10%); 
-       /* transition */
-       --transition: cubic-bezier(0.3,0,0.3,1);
 }
 
 /* =================RESET============= */
@@ -46,7 +37,7 @@ body{
 
 h1,h2,h3{
     color: var(--title-color);
-    font-weight: 600;
+    font-weight:500;
 }
 ul{
     list-style: none;
@@ -71,30 +62,12 @@ img{
     max-width: 100%;
 }
 
-/*         REUSEABLE CSS CLASSES */
-
-.container{
-    max-width: 1300px;
-    margin-inline: auto;
-    padding-inline: 12px;
-}
-
-.grid{
-    display: grid;
-    gap: 24px;
-}
-.text-cs{
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    z-index: 1;
-}
-
 .btn{
   background-color: var(--primary-color)!important;
   color: var(--bg-color)!important;
   font-size: var(--tiny-font-size);
   font-weight: 600;
-  height: 2.8rem;
+  height: 2.2rem;
   display: grid;
   place-items: center;
   position: relative;
@@ -108,34 +81,6 @@ img{
 }
 
 
-.section{
-    padding-bottom: 220px;
-}
-.section_title,
-.section_subtitle{
-    text-align: center;
-}
-
-.section_title{
-    font-size: var(--h1-font-size);
-}
-
-.section_subtitle{
-    color: var(--primary-color);
-    font-size: var(--smaller-font-size);
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 60px;
-
-}
-
-.section_subtitle span{
-    font-family: var(--second-font);
-    color: var(--title-color);
-    font-size: var(--h3-font-size);
-    text-transform: capitalize;
-    margin-left: 10px;
-}
 
 .card{
     background-color: var(--body-color);

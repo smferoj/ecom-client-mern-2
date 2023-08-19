@@ -22,7 +22,6 @@ const Menu = () => {
   };
 
       return (
-   
           <div className="nav_container">
               <div className="left_col">
                 <div className="d-flex align-items-center">
